@@ -1,0 +1,8 @@
+{
+  "appService.zipIgnorePattern": [
+    "node_modules{,/**}",
+    ".vscode{,/**}"
+  ],
+  "appService.deploySubpath": ".",
+  "appService.defaultWebAppToDeploy": "/subscriptions/b97e0897-3b7a-441d-90f6-52bc798ad5f6/resourceGroups/Jakes/providers/Microsoft.Web/sites/turnip-api"
+}
