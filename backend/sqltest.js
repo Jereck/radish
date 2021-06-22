@@ -18,7 +18,6 @@ const config = {
 }
 
 const pool = new sql.ConnectionPool(config);
-const poolConnection = pool.connect();
 
 const Insert = async (ParticipantId, NumericValue, MediaTime, SystemTime, StartTime, TimeSince) => {
   var transaction = new sql.Transaction(pool);
@@ -36,8 +35,6 @@ const Insert = async (ParticipantId, NumericValue, MediaTime, SystemTime, StartT
   
       const request = new sql.Request(transaction)
 
-      // SERVER TIME
-      //, convert(varchar,GETDATE(), 108)
       request.query(`INSERT INTO [${process.env.TABLE_NAME}] (ParticipantId, NumericValue, MediaTime, SystemTime, StartTime, TimeSince, ServerTime) 
                   VALUES ('${ParticipantId}', ${NumericValue}, '${MediaTime}', '${SystemTime}', '${StartTime}', '${TimeSince}', convert(varchar,GETDATE(), 108))`, (err, result) => {
         if (err) {
