@@ -1,6 +1,6 @@
 const time = require('time-since');
 
-const { Insert } = require('../../sqltest');
+const { Insert } = require('../../database');
 
 exports.home = function(req, res) {
   res.json({
