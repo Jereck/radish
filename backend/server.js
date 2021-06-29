@@ -1,9 +1,13 @@
-require('./api/models/porkModel')
-
+// Framework for API
 const express = require('express');
+
+// Security Framework
 const helmet = require('helmet');
+
+// Initializes App
 const app = express();
 
+// Initializing Helmet
 app.use(helmet());
 app.use(express.json());
 

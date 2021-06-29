@@ -5,7 +5,7 @@ import ReactPlayer from "react-player";
 import "./styles.css";
 import { setSentimentNumber } from "../../actions/sentimentActions";
 
-function Turnip() {
+function Turnip2() {
   const time = useSelector((state) => state.systemTime);
   const user = useSelector((state) => state.participantId);
   const [mediaTime, setMediaTime] = useState();
@@ -139,4 +139,4 @@ function Turnip() {
   );
 }
 
-export default Turnip;
+export default Turnip2;

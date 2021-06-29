@@ -30,6 +30,7 @@ exports.create_a_pork = function(req, res) {
   const pid = req.body.participantId;
   const mediaTime = req.body.mediaTime;
   const startTime = req.body.startTime;
+  const videoUrl = req.body.videoUrl;
 
-  res.send(Insert(pid, sentiment, mediaTime, systemTime, startTime, timeSince))
+  res.send(Insert(pid, sentiment, mediaTime, systemTime, startTime, timeSince, videoUrl))
 }

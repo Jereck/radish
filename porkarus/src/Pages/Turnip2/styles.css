@@ -1,0 +1,155 @@
+:root {
+  --unit: 10px;
+}
+
+#overlay {
+  position: absolute;
+  /* display: none; */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 2;
+}
+
+.container {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  margin-top: 10px;
+}
+
+.warning {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #9bf00b;
+}
+
+.ticks {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  width: 97%;
+  margin: 0 auto;
+}
+
+.tick {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  width: 1px;
+  background: grey;
+  height: var(--unit);
+  line-height: 35px;
+  margin-bottom: var(--unit) * 2;
+}
+
+.sentiment-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.smile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 50px;
+  background: #737373;
+  outline: none;
+  opacity: 0.6;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:focus {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50px;
+  height: 50px;
+  background: #107c10;
+  border: 2px solid #9bf00b;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4caf50;
+  border: 2px solid #9bf00b;
+  cursor: pointer;
+}
+
+.pulsate {
+  animation: pulsate 3s infinite;
+  -webkit-animation: pulsate 3s ease-out;
+  -webkit-animation-iteration-count: infinite; 
+  opacity: 0.5;
+}
+
+@-webkit-keyframes pulsate {
+  0% { 
+      opacity: 0.5;
+  }
+  25% { 
+      opacity: 1.0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% { 
+      opacity: 1;
+  }
+}
+
+@keyframes pulsate {
+  0% { 
+    opacity: 0.5;
+  }
+  25% { 
+      opacity: 1.0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% { 
+      opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .ticks {
+    width: 93%;
+  }
+}

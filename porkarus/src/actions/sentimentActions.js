@@ -2,7 +2,7 @@ import axios from 'axios'
 
 import { ADD_SENTIMENT } from './types';
 
-export const setSentimentNumber = (number, user, time, mediaTime, startTime) => {
+export const setSentimentNumber = (number, user, time, mediaTime, startTime, videoUrl) => {
   return dispatch => {
     axios.post(`https://turnip3-api.azurewebsites.net/turnip`,
       {
@@ -10,7 +10,8 @@ export const setSentimentNumber = (number, user, time, mediaTime, startTime) => 
         systemTime: time,
         participantId: user,
         mediaTime: mediaTime,
-        startTime: startTime
+        startTime: startTime,
+        videoUrl: videoUrl
       })
       .then(res => {
         dispatch(addSentiment(res.data))
@@ -28,6 +29,7 @@ const addSentiment = sentiment => ({
     systemTime: sentiment.systemTime,
     number: sentiment.number,
     mediaTime: sentiment.mediaTime,
-    startTime: sentiment.startTime
+    startTime: sentiment.startTime,
+    videoUrl: sentiment.videoUrl
   }
 })
